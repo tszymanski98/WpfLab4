@@ -29,6 +29,7 @@ namespace WpfLab4
         }
 
         public int a_sprawdzam = 0;
+        public int b = 0;
 
         private void wybor_klik(object sender, RoutedEventArgs e)
         {
@@ -58,13 +59,14 @@ namespace WpfLab4
                 flipTrans.ScaleX = 1;
                 a_sprawdzam = 0;
             }
-
             imycz.RenderTransform = flipTrans;
-
         }
         private void najnti_klik(object sender, RoutedEventArgs e)
         {
-
+            b += 90;
+            imycz.RenderTransformOrigin = new System.Windows.Point(0.5, 0.5);
+            RotateTransform rotateTransform = new RotateTransform(b);
+            imycz.RenderTransform = rotateTransform;
         }
         private void zielony_klik(object sender, RoutedEventArgs e)
         {
